@@ -1,3 +1,8 @@
 n = input()
 m = input()
-print(n.index(m))
+def s(n, m):
+    if m in n:
+        return n.index(m)
+    else:
+        return -1
+print(s(n,m))
