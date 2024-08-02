@@ -3,4 +3,4 @@ def f(n):
         return n
     return f(n-2) + n
 n = int(input())
-print(f(5))
+print(f(n))
