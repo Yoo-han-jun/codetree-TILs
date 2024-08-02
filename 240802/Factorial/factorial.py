@@ -6,4 +6,5 @@ def f(n):
     if n==2:
         return 2
     return n * f(n-1)
-print(f(5))
+n = int(input())
+print(f(n))
