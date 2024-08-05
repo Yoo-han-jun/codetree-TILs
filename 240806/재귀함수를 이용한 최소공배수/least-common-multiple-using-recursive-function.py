@@ -1,13 +1,4 @@
 sum_val =1
-def iso(n):
-    cnt=0
-    for i in range (2,n-1):
-        n-1%i==0
-        cnt+=i
-    if cnt ==0:
-        return True
-    else:
-        return False
 def low(a, b):
     cnt = 1
     if a%b==0 or b%a==0:
@@ -20,8 +11,10 @@ def low(a, b):
 def s(a, n):
     global sum_val
     if n==1:
+        return a[0]
+    if n==2:
         return sum_val
-    sum_val = (sum_val * a[n-1]) // low(a[n-1], sum_val)
+    sum_val = (sum_val * a[n-2]) // low(a[n-2], sum_val)
     return s(a, n-1)
 
         
