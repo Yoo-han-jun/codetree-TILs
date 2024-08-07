@@ -16,7 +16,7 @@ for _ in range (n):
     arr.append(info)
 cnt = year(arr[0].date)
 num = 0
-for i in range (0, n):
+for i in range (1, n):
     if arr[i].wea == "Rain":
         if cnt > abs(year(arr[0].date)-year(arr[1].date)):
             cnt = abs(year(arr[0].date)-year(arr[1].date))
