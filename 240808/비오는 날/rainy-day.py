@@ -14,7 +14,7 @@ for _ in range (n):
     df = tuple(input().split())
     info = ex(df[0],df[1],df[2])
     arr.append(info)
-cnt = year(arr[0].date)
+cnt = 2100*365
 num = 0
 for i in range (0, n):
     if arr[i].wea == "Rain":
