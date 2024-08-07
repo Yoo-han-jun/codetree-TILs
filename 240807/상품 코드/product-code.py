@@ -1,5 +1,5 @@
 class save:
-    def __init__(self,name="codetree",code=88):
+    def __init__(self,name="codetree",code=50):
         self.name = name
         self.code = code
 info = tuple(input().split())
