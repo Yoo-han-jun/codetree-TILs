@@ -10,6 +10,6 @@ for i in range(1,n+1):
     dot = distance(int(x),int(y), int(i))
     arr.append(dot)
 
-arr.sort(key = lambda x:(-abs((x.x)^2 + (x.y)^2), x.number))
+arr.sort(key = lambda x:((abs(x.x) + abs(x.y)), x.number))
 for ele in arr:
     print (ele.number)
