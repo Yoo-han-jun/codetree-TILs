@@ -12,7 +12,7 @@ for i in range (1, c):
     cnt2 += month[i-1]
 cnt2+=d
 
-if cnt2==cnt and cnt%7==day.index(dat)+1:
+if cnt2==cnt and dat=="Mon":
     print(1)
 elif (cnt2-cnt)%7 >= day.index(dat)+1:
     print(((cnt2-cnt)//7)+1)
