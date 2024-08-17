@@ -14,7 +14,7 @@ cnt2+=d
 
 if cnt2==cnt and dat=="Mon":
     print(1)
-elif (cnt2-cnt)%7 >= day.index(dat)+1:
+elif (cnt2-cnt)%7 >= day.index(dat):
     print(((cnt2-cnt)//7)+1)
 else:
     print(((cnt2-cnt)//7))
