@@ -1,10 +1,10 @@
 n = int(input())
-arr = [0]*201
+arr = [0]*210
 for _ in range(n):
     a, b= map(int,input().split())
-    a += 100
-    b += 100
-    for i in range(a+1, b):
+    a += 101
+    b += 101
+    for i in range(a, b):
         arr[i]+=1
 
 print(max(arr))
