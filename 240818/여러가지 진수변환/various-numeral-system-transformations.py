@@ -1,5 +1,7 @@
 a,b = map(int,input().split())
 arr = []
+if a<b:
+    arr.append(a)
 while a>b:
     cnt = a%b
     arr.append(cnt)
