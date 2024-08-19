@@ -10,7 +10,7 @@ for _ in range (n):
             arr[i]+=1
         cnt = cnt+a
     else:
-        for i in range(cnt,cnt-a,-1):
+        for i in range(cnt-1,cnt-a-1,-1):
             arr[i]+=1
         cnt = cnt-a
 for ele in arr:
