@@ -1,7 +1,7 @@
 n = int(input())
-arr1 = [0]*200
-cnt = 100
-arr2 = [1]*200
+arr1 = [0]*200000
+cnt = 100000
+arr2 = [1]*200000
 for _ in range (n):
     a, b= tuple(input().split())
     a = int(a)
