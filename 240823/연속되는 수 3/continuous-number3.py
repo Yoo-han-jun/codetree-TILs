@@ -8,7 +8,7 @@ for _ in range (n):
     else:
         arr.append(0)
 cnt =1
-max_n =0
+max_n =1
 for i in range (n-1):
     if arr[i] == arr[i+1]:
         cnt+=1
