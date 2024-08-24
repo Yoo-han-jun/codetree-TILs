@@ -39,5 +39,5 @@ for i in range (1, max(number,number2)):
         break
     else:
         cnt3+=1
-if cnt == max(number,number2)-1:
+if cnt3 == max(number,number2)-1:
     print(-1)
