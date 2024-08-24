@@ -4,7 +4,7 @@ ans = -1
 for _ in range (m):
     s = int(input())
     arr[s]+=1
-    for ele in arr:
-        if ele>=k:
-            ans = arr.index(ele)
+    if arr[s]>=k:
+        ans = s
+        break
 print(ans)
