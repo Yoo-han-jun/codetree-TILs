@@ -1,6 +1,6 @@
 n, m = map(int, input().split())
-arra = [0]*50
-arrb = [0]*50
+arra = [0]*n*1000
+arrb = [0]*m*1000
 cnt = 0
 number = 0
 cnt2 =0
