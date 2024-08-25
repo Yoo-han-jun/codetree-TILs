@@ -1,7 +1,7 @@
 n, m = map(int,input().split())
 Max_R = 1000000
-arra = [0]*1000000
-arrb = [0]*1000000
+arra = [0]*1000002
+arrb = [0]*1000002
 numa = 0
 numb = 0
 disa = 0
