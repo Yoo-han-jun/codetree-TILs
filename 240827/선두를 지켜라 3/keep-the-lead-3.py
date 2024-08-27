@@ -1,6 +1,6 @@
 a, b = map(int,input().split())
-arra=[0]*100
-arrb=[0]*100
+arra=[0]*1000000
+arrb=[0]*1000000
 num = 0 
 num2= 0
 cnt = 0
