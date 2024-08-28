@@ -3,7 +3,7 @@ arr = [[0 for _ in range (n)] for _ in range (n)]
 x, y, D = tuple(input().split())
 x, y = int(x), int(y)
 
-dx = [1, 0, -1, 0]
+dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
 mapper = {
     'U' : 0,
