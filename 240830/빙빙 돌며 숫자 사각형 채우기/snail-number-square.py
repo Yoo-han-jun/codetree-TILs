@@ -1,5 +1,5 @@
 n, m = map(int,input().split())
-arr = [[0 for _ in range (n)] for _ in range(m)]
+arr = [[0 for _ in range (m)] for _ in range(n)]
 dx = [0, 1, 0, -1]
 dy = [1, 0, -1, 0]
 x, y = 0, 0
@@ -9,7 +9,7 @@ cnt = 1
 arr[nx][ny]=1
 
 def in_range(x,y):
-    return x>=0 and x<n and y>=0 and y<n
+    return x>=0 and x<n and y>=0 and y<m
 
 for i in range (2, n*m+1):
         nx, ny = x +dx[dir_c], y+dy[dir_c]
