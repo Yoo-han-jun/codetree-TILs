@@ -13,14 +13,14 @@ answer = False
 for _ in range(n):
     dir_c, t = tuple(input().split())
     t = int(t)
-    if answer==True:
-        print(cnt)
-        break
     for _ in range(t):
         x, y = x+dx[mapper[dir_c]], y+dy[mapper[dir_c]]
         cnt += 1
         if x==0 and y==0 :
             answer = True
             break
+    if answer==True:
+        print(cnt)
+        break
 if answer == False:
     print(-1)
