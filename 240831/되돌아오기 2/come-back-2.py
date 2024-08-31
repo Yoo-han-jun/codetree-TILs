@@ -4,6 +4,7 @@ dx = [1, 0, -1, 0]
 dy = [0, -1, 0, 1]
 dir_c = 3
 cnt = 0
+answer = False
 for i in range(len(n)):
     if n[i] =="L":
         dir_c = (dir_c+3)%4
