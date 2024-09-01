@@ -3,7 +3,6 @@ dx = [0, 1, 0, -1]
 dy = [1, 0, -1 , 0]
 ox, oy = 0,0
 dir_d = 0
-dir_l = (dir_d+1)%4
 mappera = {
     0:3,
     3:0,
@@ -49,6 +48,7 @@ for _ in range (4*n+8):
         if cnt == m:
             break
         cnt+=1
+dir_l = (dir_d+1)%4
 cnt2 = 0        
 while True:
     dirx, diry = ox+dx[dir_l], oy+dy[dir_l]
