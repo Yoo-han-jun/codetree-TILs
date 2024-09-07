@@ -3,7 +3,7 @@ arr=[]
 for _ in range(n):
     r = int(input())
     arr.append(r)
-result = 1000000
+result = 1000000000000000000000000000
 for i in range(n):
     sum_p = sum(arr)
     cnt_val = 0
