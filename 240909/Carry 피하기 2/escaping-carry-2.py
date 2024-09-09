@@ -11,7 +11,7 @@ for i in range (n):
             cnt_val = 0
             x, y, z = a[i], a[j], a[k]
             for _ in range (4):
-                if (x%10 + y%10 + z%10) >10:
+                if (x%10 + y%10 + z%10) >=10:
                     cnt_val = -1
                 x = x//10 
                 y = y//10
