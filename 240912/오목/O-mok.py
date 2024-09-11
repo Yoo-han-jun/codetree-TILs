@@ -5,7 +5,7 @@ ans = False
 a_x, a_y = 0, 0
 for i in range(2, 16):
     for j in range(2,16):
-        cnt1, cnt2, cnt3 =0 ,0, 0
+        cnt1, cnt2, cnt3, cnt4 =0 ,0, 0, 0
         for k in range (-2, 3):
             if arr[i][j] ==1 or arr[i][j]==2:
                 if arr[i][j] == arr[i+k][j-k]:
@@ -14,7 +14,9 @@ for i in range(2, 16):
                     cnt2 +=1
                 if arr[i][j] == arr[i][j+k]:
                     cnt3 +=1
-            if cnt1 ==5 or cnt2 ==5 or cnt3==5:
+                if arr[i][j] == arr[i+k][j+k]:
+                    cnt4 +=1
+            if cnt1 ==5 or cnt2 ==5 or cnt3==5 or cnt4==5:
                 a_x, a_y = i,j
                 ans = True
                 break
