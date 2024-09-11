@@ -3,8 +3,8 @@ def in_range(x, y):
     return x<19 and x>=0 and y<19 and y>=0
 ans = False
 a_x, a_y = 0, 0
-for i in range(3, 4):
-    for j in range(5,8):
+for i in range(2, 16):
+    for j in range(2,16):
         cnt1, cnt2, cnt3 =0 ,0, 0
         for k in range (-2, 3):
             if arr[i][j] ==1 or arr[i][j]==2:
