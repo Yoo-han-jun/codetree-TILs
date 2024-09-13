@@ -16,8 +16,6 @@ for i in range(n):
                                 cnt+=1
                             if arr[k][l+m]==1:
                                 cnt+=1
-                            if cnt==3:
-                                print(i,j,k,l)
                     max_val = max(max_val, cnt)
             else:
                 for l in range(n):
