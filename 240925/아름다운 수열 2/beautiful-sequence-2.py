@@ -3,11 +3,13 @@ arr = list(map(int,input().split()))
 arr2 = list(map(int,input().split()))
 sum_val=0
 for i in range (n-m+1):
-    arr3 = [0 for _ in range (m)]
+    arr3 = []
     for j in range (i, i+m):
         for l in range (m):
-            if arr2[l] == arr[j]:
-                arr3[l] = arr2[l]
-    if arr3 == arr2:
-        sum_val+=1
-print(sum_val)
+            arr3.append(arr[l])
+        arr2.sort()
+        arr3.sort()
+        if arr3 == arr2:
+            sum_val+=1
+        arr3.clear()
+print(sum_val//m)
