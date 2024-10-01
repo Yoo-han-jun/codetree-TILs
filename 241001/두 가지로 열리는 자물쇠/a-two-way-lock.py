@@ -13,7 +13,8 @@ cnt=0
 for i in range (1,n+1):
     for j in range (1,n+1):
         for k in range (1,n+1):
-            if f(arr1[2],k) or f(arr1[1],j) or f(arr1[0],i):
-                if f(arr2[2],k) or f(arr2[1],j) or f(arr2[0],i):
-                    cnt+=1
-print(n*n*n-cnt)
+            if f(arr1[2],k) and f(arr1[1],j) and f(arr1[0],i):
+                cnt+=1
+            elif f(arr2[2],k) and f(arr2[1],j) and f(arr2[0],i):
+                cnt+=1
+print(cnt)
