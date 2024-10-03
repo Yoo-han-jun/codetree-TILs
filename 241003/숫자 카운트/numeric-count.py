@@ -8,7 +8,6 @@ guess_number = []
 for _ in range (n):
     number, right, guess = tuple(input().split())
     guess_number.append(b(number, right, guess))
-t =guess_number[1]
 total_val = 0
 for i in range (1, 10):
     for j in range (1, 10):
@@ -32,6 +31,6 @@ for i in range (1, 10):
                         c+=1
                     if int(t.right)==b and int(t.guess)==c:
                         cnt_val+=1
-                if cnt_val ==4:
+                if cnt_val == n:
                     total_val+=1
 print(total_val)
