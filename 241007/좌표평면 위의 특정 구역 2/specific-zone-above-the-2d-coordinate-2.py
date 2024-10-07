@@ -3,7 +3,7 @@ arr = []
 for _ in range (n):
     a, b= tuple(input().split())
     arr.append((a,b))
-min_val = 100000000
+min_val = 10000000000000000000000000000
 for i in range(n):
     max_x = 1
     min_x = 400001
