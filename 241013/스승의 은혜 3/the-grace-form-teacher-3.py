@@ -6,20 +6,20 @@ arr3 = []
 for i in range (n):
     arr1 = [0 for _ in range (n)]
     arr2 = [0 for _ in range (n)]
-    for j in range (i):
+    for j in range (i+1):
         p, d = arr[j]
         arr1[j] = int(p)
         arr2[j] = int(d)
     predict = sum(arr1)+sum(arr2)
     if predict>b:
-        for j in range (i):
+        for j in range (i+1):
             if arr1[j] == max(arr1):
                 arr1[j] = arr1[j]//2
-                break
-    predict = sum(arr1)+sum(arr2)
+            break
+        predict = sum(arr1)+sum(arr2)
     if predict>b:
-        arr3.append(i)
+        arr3.append(i+1)
 if arr3:
-    print(min(arr3)-1)
+    print(min(arr3))
 else:
     print(n)
