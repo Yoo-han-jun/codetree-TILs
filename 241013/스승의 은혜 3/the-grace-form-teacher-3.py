@@ -11,14 +11,15 @@ for i in range (n):
         arr1[j] = int(p)
         arr2[j] = int(d)
     predict = sum(arr1)+sum(arr2)
-    if predict>=b:
+    if predict>b:
         for j in range (i):
-            if arr[j] == max(arr[j]):
-                arr[j] = arr[j]//2
-            predict = sum(arr1)+sum(arr2)
-            if predict>=b:
-                arr3.append(i)
+            if arr1[j] == max(arr1):
+                arr1[j] = arr1[j]//2
+                break
+    predict = sum(arr1)+sum(arr2)
+    if predict>b:
+        arr3.append(i)
 if arr3:
-    print(min(arr3))
+    print(min(arr3)-1)
 else:
     print(n)
