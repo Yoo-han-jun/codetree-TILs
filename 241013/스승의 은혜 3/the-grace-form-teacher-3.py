@@ -15,10 +15,10 @@ for i in range (n):
         for j in range (i+1):
             if arr1[j] == max(arr1):
                 arr1[j] = arr1[j]//2
-            break
+                break
         predict = sum(arr1)+sum(arr2)
     if predict>b:
-        arr3.append(i+1)
+        arr3.append(i)
 if arr3:
     print(min(arr3))
 else:
