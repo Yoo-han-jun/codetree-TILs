@@ -1,6 +1,6 @@
 n, b = map(int,input().split())
 arr = [tuple(map(int,input().split())) for _ in range (n)]
-arr.sort(key = lambda x:(x[0]+x[1], x[1]))
+arr.sort(key = lambda x:(x[0]//2+x[1], x[0]+x[1],x[1]))
 sum_val = 0
 for i in range (n):
     p, d = arr[i]
@@ -13,3 +13,5 @@ for i in range (n):
         else:
             sum_val = predict_val
     sum_val = predict_val
+    if i == n-1:
+        print(n)
