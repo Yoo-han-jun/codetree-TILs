@@ -9,4 +9,6 @@ for i in range (n):
         predict_val = sum_val + p//2+d
         if predict_val >=b:
             print(i)
+        else:
+            sum_val = predict_val
     sum_val = predict_val
