@@ -1,35 +1,56 @@
+# n, b 입력
 n, b = map(int, input().split())
-arr = [tuple(map(int, input().split())) for _ in range(n)]
+# price_list
+price_list = list()
+# price_list 채우기
+for _ in range(n):
+    price_list.append(tuple(map(int, input().split())))
 
-# 각 학생의 선물 총 가격 (가격 + 배송비) 계산
-total_costs = [(p + s, p, s) for p, s in arr]
+# 함수들
+# discount(k)
+def discount(k):
+    # unpacking
+    p1, p2 = price_list[k]
+    # 반값으로 내려 반환
+    return p1//2 + p2
 
-# 선물 총 가격 기준으로 정렬
-total_costs.sort()
+# buy_max(curr_list)
+def buy_max(curr_list):
 
-# 최대 몇 명에게 선물을 줄 수 있는지 계산
-max_students = 0
-current_budget = 0
+    # curr_list 정렬
+    curr_list.sort()
 
+    # 최대 구입 갯수 구하기
+    for i in range(1, n):
+        # 예산을 넘으면
+        if sum(curr_list[:i+1]) > b:
+            # 현재 인덱스를 반환
+            return i
+
+# 설계
+# max_cnt
+max_cnt = 0
+
+# 하나씩 반값으로 내려보는 완전탐색
 for i in range(n):
-    # 현재 학생에게 선물을 줄 때 필요한 비용
-    total_price, p, s = total_costs[i]
     
-    # 현재 예산에 이 학생의 선물을 추가할 수 있는지 확인
-    if current_budget + total_price <= b:
-        current_budget += total_price
-        max_students += 1
-    else:
-        break
+    # merged_price_list
+    merged_price_list = []
 
-# 반값 쿠폰을 사용하여 최대 학생 수를 다시 계산
-for i in range(n):
-    # 반값 쿠폰을 사용할 경우, 해당 학생의 가격을 절반으로 줄임
-    discount_price = total_costs[i][1] // 2 + total_costs[i][2]
-    temp_budget = current_budget - (total_costs[i][0] if i < max_students else 0) + discount_price
+    # merged_price_list 채우기
+    for j in range(n):
+        # 현재 반값으로 내리는 인덱스라면
+        if i == j:
+            merged_price_list.append(discount(j))
+        # 이외에는
+        else:
+            # unpacking
+            p1, p2 = price_list[j]
+            # 그대로 합쳐서 추가
+            merged_price_list.append(p1 + p2)
+    
+    # max_cnt 업데이트
+    max_cnt = max(max_cnt, buy_max(merged_price_list))
 
-    # 예산을 초과하지 않으면 최대 학생 수 갱신
-    if temp_budget <= b:
-        max_students = max(max_students, max_students + (1 if i >= max_students else 0))
-
-print(max_students)
+# 출력
+print(max_cnt)
