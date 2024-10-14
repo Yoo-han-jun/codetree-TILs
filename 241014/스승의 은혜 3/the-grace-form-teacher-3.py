@@ -1,31 +1,35 @@
 n, b = map(int, input().split())
 arr = [tuple(map(int, input().split())) for _ in range(n)]
 
-# 선물 가격 + 배송비로 정렬
-arr.sort(key=lambda x: x[0]//2 + x[1])
+# 각 학생의 선물 총 가격 (가격 + 배송비) 계산
+total_costs = [(p + s, p, s) for p, s in arr]
 
+# 선물 총 가격 기준으로 정렬
+total_costs.sort()
+
+# 최대 몇 명에게 선물을 줄 수 있는지 계산
 max_students = 0
+current_budget = 0
 
-# 선물 하나에 쿠폰을 적용하는 경우를 계산
 for i in range(n):
-    total_cost = 0
-    count = 0
+    # 현재 학생에게 선물을 줄 때 필요한 비용
+    total_price, p, s = total_costs[i]
+    
+    # 현재 예산에 이 학생의 선물을 추가할 수 있는지 확인
+    if current_budget + total_price <= b:
+        current_budget += total_price
+        max_students += 1
+    else:
+        break
 
-    # 모든 학생에게 선물을 줄 때 쿠폰을 i번째 선물에 적용
-    for j in range(n):
-        if j == i:
-            # i번째 선물에만 쿠폰 적용 (가격을 반값으로 줄임)
-            total_cost += arr[j][0] // 2 + arr[j][1]
-        else:
-            # 나머지 선물은 정상 가격으로 계산
-            total_cost += arr[j][0] + arr[j][1]
+# 반값 쿠폰을 사용하여 최대 학생 수를 다시 계산
+for i in range(n):
+    # 반값 쿠폰을 사용할 경우, 해당 학생의 가격을 절반으로 줄임
+    discount_price = total_costs[i][1] // 2 + total_costs[i][2]
+    temp_budget = current_budget - (total_costs[i][0] if i < max_students else 0) + discount_price
 
-        # 예산을 초과하면 종료
-        if total_cost > b:
-            break
-        count += 1
-
-    # 최대로 선물 가능한 학생 수를 업데이트
-    max_students = max(max_students, count)
+    # 예산을 초과하지 않으면 최대 학생 수 갱신
+    if temp_budget <= b:
+        max_students = max(max_students, max_students + (1 if i >= max_students else 0))
 
 print(max_students)
