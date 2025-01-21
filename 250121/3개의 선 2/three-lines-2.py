@@ -9,11 +9,13 @@ answer = False
 for i in range (11):
     for j in range (i,11):
         for k in range (j,11):
+            cnt = 0
             for l in range (n):
                 if i == y[l] or j == y[l] or k== y[l]:
                     cnt +=1
             if cnt == n:
                 answer = True
+
 # x = 2 y = 1 로 될 경우
 for i in range (11):
     for j in range (i,11):
@@ -42,6 +44,7 @@ for i in range (11):
 for i in range (11):
     for j in range (i,11):
         for k in range (j,11):
+            cnt = 0
             for l in range (n):
                 if i == x[l] or j == x[l] or k== x[l]:
                     cnt +=1
