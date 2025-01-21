@@ -45,7 +45,7 @@ for i in range (11):
             cnt +=1
     if cnt == n:
         answer = True
-print(answer)
+
 if answer:
     print(1)
 else:
