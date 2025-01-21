@@ -7,12 +7,13 @@ x, y = list(x), list(y)
 answer = False
 # y가 모두 같은 경우
 for i in range (11):
-    for j in range (n):
-        cnt = 0
-        if i == y[j]:
-            cnt +=1
-    if cnt == n:
-        answer = True
+    for j in range (i,11):
+        for k in range (j,11):
+            for l in range (n):
+                if i == y[l] or j == y[l] or k== y[l]:
+                    cnt +=1
+            if cnt == n:
+                answer = True
 # x = 2 y = 1 로 될 경우
 for i in range (11):
     for j in range (i,11):
@@ -39,12 +40,13 @@ for i in range (11):
                     answer = True
 # x = 3
 for i in range (11):
-    for j in range (n):
-        cnt = 0
-        if i == x[j]:
-            cnt +=1
-    if cnt == n:
-        answer = True
+    for j in range (i,11):
+        for k in range (j,11):
+            for l in range (n):
+                if i == x[l] or j == x[l] or k== x[l]:
+                    cnt +=1
+            if cnt == n:
+                answer = True
 
 if answer:
     print(1)
