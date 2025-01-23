@@ -7,7 +7,7 @@ for i in range (3):
 arr.append(inp[0][0]+inp[1][1]+inp[2][2])
 arr.append(inp[2][0]+inp[1][1]+inp[0][2])
 # Write your code here!
-
+k_list_ok = []
 inp = inp+arr
 for i in range (8):
     k = inp[i]
@@ -24,5 +24,7 @@ for i in range (8):
                 if k_list[n]==l or k_list[n]==m:
                     cnt+=1
             if cnt==3:
-                cnt_val+=1
-print(cnt_val//2)
+                k_list_ok.append(list(sorted(set(k_list))))
+k_list_ok_r = {str(val):val for val in k_list_ok}.values()
+k_list_ok_r = list(k_list_ok_r)
+print(len(k_list_ok_r))
