@@ -8,7 +8,7 @@ for i in range (1,N+1):
         if answer == False:
             continue
         cnt = str[k:k+i]
-        for j in range (k+i, N-i+1):
+        for j in range (k+1, N-i+1):
           cnt2 = str[j:j+i]
           if cnt == cnt2:
             answer = False
