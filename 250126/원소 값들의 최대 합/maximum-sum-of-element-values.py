@@ -3,7 +3,7 @@ arr = [0] + list(map(int, input().split()))
 
 # Write your code here!
 max_cnt = 0
-for i in range (n):
+for i in range (1,n+1):
     cnt_val = 0
     j = i
     for _ in range (m):
