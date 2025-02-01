@@ -20,7 +20,7 @@ def is_possible(max_val, k):
     return True
 
 max_num = 1000 
-for i in range (101, max(arr[0], arr[-1]), -1):
+for i in range (101, max(arr[0], arr[-1])-1, -1):
     if is_possible(i, k):
         max_num = min(i, max_num)
 print(max_num)
