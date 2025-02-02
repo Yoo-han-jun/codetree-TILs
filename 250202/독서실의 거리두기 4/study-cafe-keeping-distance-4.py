@@ -22,7 +22,5 @@ for i in range (N):
         for k in range (len(arr3)-1):
             dis = arr3[k+1]-arr3[k]
             arr4.append(dis)
-        if 1 in arr4:
-            continue
         max_dis = max(max_dis, min(arr4))
 print(max_dis)
