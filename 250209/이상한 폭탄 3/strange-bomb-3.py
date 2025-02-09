@@ -4,6 +4,7 @@ num = [int(input()) for _ in range(N)]
 # Write
 arr1 = list(set(num))
 arr1.sort()
+arr1.reverse()
 arr3 = []
 for i in range (len(arr1)):
     arr2=[]
