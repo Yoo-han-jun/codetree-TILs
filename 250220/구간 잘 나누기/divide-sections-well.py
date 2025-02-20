@@ -8,15 +8,12 @@ for i in range (max(a), max_num):
     s = 1
     cnt = 0
     for j in range (len(a)):
-        if a[j]>i:
-            break
         if cnt+a[j]<=i:
             cnt+=a[j]
             continue
         elif cnt+a[j] >i:
             s +=1
             cnt = a[j]
-        
     if s == m:
         print(i)
         break
