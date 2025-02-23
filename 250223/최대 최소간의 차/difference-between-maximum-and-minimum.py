@@ -2,7 +2,7 @@ n, k = map(int, input().split())
 arr = list(map(int, input().split()))
 max_cnt = 10000000
 # 최대 최소 K
-for i in range (100):
+for i in range (10000):
     cnt = 0
     for j in range (n):
         if arr[j]>i+k:
