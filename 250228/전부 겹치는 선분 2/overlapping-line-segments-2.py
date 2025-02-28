@@ -10,11 +10,10 @@ for i in range (n):
     l = {idx: 0 for idx in range(min(x1), max(x2)+1)}
     for j in range (n):
         if i==j:
-            pass
+            continue
         else:
-            for x, y in segments:
-              for i in range(x, y+1):
-                 l[i]+=1
+            for k in range(x1[j], x2[j]+1):
+                 l[k]+=1
             if n-1 in l.values():
                 answer = True
 
