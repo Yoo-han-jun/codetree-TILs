@@ -8,7 +8,9 @@ u = [int(msg[1]) for msg in messages]
 l = {idx: 0 for idx in range (n)}
 for i in range (p-1, m):
     l[ord(c[i])-65] +=1
-
-for k, v in l.items():
-    if v==0:
-        print(chr(k+65),end=" ")
+if u[p-1]==0:
+    print()
+else:
+    for k, v in l.items():
+        if v==0:
+            print(chr(k+65),end=" ")
