@@ -24,4 +24,5 @@ for j in range (arr[num]+1, arr[num+1]):
             continue    
         arr4.append(k)
     min_cnt = min(min(arr4), min_cnt)
+min_cnt = min(min(arr2), min_cnt)
 print(min_cnt)
