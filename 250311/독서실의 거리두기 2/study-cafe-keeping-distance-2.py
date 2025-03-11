@@ -34,4 +34,8 @@ else:
     arr2 = arr1.copy()
     arr2.append(N-1)
     max_val = max(max_val, find_biggest_seat_current(arr2))
+    arr2 = arr1.copy()
+    arr2.append(0)
+    arr2.sort()
+    max_val = max(max_val, find_biggest_seat_current(arr2))
 print(max_val)
