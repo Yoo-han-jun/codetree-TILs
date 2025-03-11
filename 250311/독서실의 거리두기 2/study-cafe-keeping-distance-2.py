@@ -21,21 +21,26 @@ def find_biggest_seat(N):
     return arr2.index(max(arr2))
 
 arr1 = find_large_seat(seats)
-biggest = find_biggest_seat(find_large_seat(seats))
+biggest = 0
 max_val = 0
-if arr1[biggest+1]-arr1[biggest] <= 2:
-    print(0)
+
+if len(arr1)==1:
+    print(max(max(arr1),N-max(arr1)-1))
 else:
-    for j in range (arr1[biggest]+2, arr1[biggest+1]-1):
+    biggest = find_biggest_seat(find_large_seat(seats))
+    if arr1[biggest+1]-arr1[biggest] <= 2:
+        print(0)
+    else:
+        for j in range (arr1[biggest]+2, arr1[biggest+1]-1):
+            arr2 = arr1.copy()
+            arr2.append(j)
+            arr2.sort()
+            max_val = max(max_val, find_biggest_seat_current(arr2))
         arr2 = arr1.copy()
-        arr2.append(j)
+        arr2.append(N-1)
+        max_val = max(max_val, find_biggest_seat_current(arr2))
+        arr2 = arr1.copy()
+        arr2.append(0)
         arr2.sort()
         max_val = max(max_val, find_biggest_seat_current(arr2))
-    arr2 = arr1.copy()
-    arr2.append(N-1)
-    max_val = max(max_val, find_biggest_seat_current(arr2))
-    arr2 = arr1.copy()
-    arr2.append(0)
-    arr2.sort()
-    max_val = max(max_val, find_biggest_seat_current(arr2))
-print(max_val)
+    print(max_val)
