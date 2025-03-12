@@ -10,7 +10,7 @@ for _ in range(n):
 A_s = 0
 B_s = 0
 cnt= 0
-arr = [0, 0, 0]
+arr = [0, 0, 1]
 for i in range (n):
     if c[i]=="A":
         A_s+=s[i]
