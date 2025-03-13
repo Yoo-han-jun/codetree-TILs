@@ -18,8 +18,14 @@ for i in range (10):
         y_R = board[i].index("R")
         x_R = i
 if x_R==x_L==x_B:
-    print(abs(y_B-y_L)+1)
+    if max(y_B,y_L)>y_R and min(y_B, y_L)<y_R:
+        print(abs(y_B-y_L)+1)
+    else:
+        print(abs(y_B-y_L)+abs(x_B-x_L)-1)
 elif y_R==y_L==y_B:
-    print(abs(x_B-x_L)+1)
+    if max(x_B,x_L)>x_R and min(x_B, x_L)<x_R:
+        print(abs(x_B-x_L)+1)
+    else:
+        print(abs(y_B-y_L)+abs(x_B-x_L)-1)
 else:
     print(abs(y_B-y_L)+abs(x_B-x_L)-1)
