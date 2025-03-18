@@ -24,25 +24,24 @@ def get_score(a1, a2, a3):
         return 7
     if a1!=a2 and a2!=a3 and a3!=a2:
         if max(a1, a2, a3)==a1:
-            return 8
+            return 5
         if max(a1, a2, a3)==a2:
-            return 9
+            return 6
         if max(a1, a2, a3)==a3:
-            return 10
+            return 2
 arr = [0, 0, 0]
 state = 1
-state_arr = [1]
-cnt = 1
+state_arr = []
+cnt = 0
 for i in range (n):
+    state = get_score(arr[0], arr[1], arr[2])
     if c[i] =="A":
         arr[0]+=s[i]
     if c[i]=="B":
         arr[1]+=s[i]
     if c[i]=="C":
         arr[2]+=s[i]
-    if get_score(arr[0], arr[1], arr[2]) not in state_arr:
-        state = get_score(arr[0], arr[1], arr[2])
-        state_arr.append(state)
+    if state != get_score(arr[0], arr[1], arr[2]):
         cnt+=1
 
 print(cnt)
