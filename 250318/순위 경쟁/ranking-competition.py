@@ -31,16 +31,18 @@ def get_score(a1, a2, a3):
             return 10
 arr = [0, 0, 0]
 state = 1
-cnt = 0
+state_arr = [1]
+cnt = 1
 for i in range (n):
-    state = get_score(arr[0], arr[1], arr[2])
     if c[i] =="A":
         arr[0]+=s[i]
     if c[i]=="B":
         arr[1]+=s[i]
     if c[i]=="C":
         arr[2]+=s[i]
-    if state != get_score(arr[0], arr[1], arr[2]):
+    if get_score(arr[0], arr[1], arr[2]) not in state_arr:
+        state = get_score(arr[0], arr[1], arr[2])
+        state_arr.append(state)
         cnt+=1
 
 print(cnt)
