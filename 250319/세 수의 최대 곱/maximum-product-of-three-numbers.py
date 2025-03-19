@@ -18,7 +18,9 @@ arr3.sort()
 cnt = 0
 if n==3:
     print(arr[1]*arr[0]*arr[2])
-elif len(arr2)>=2 and len(arr1)>=2:
+elif len(arr2)>=2 and len(arr1)>=3:
+    cnt = max(arr2[0]*arr1[0]*arr1[1], arr1[0]*arr2[1]*arr2[0], arr1[0]*arr1[1]*arr1[2])
+elif len(arr2)>=2 and len(arr1)==2:
     cnt = max(arr2[0]*arr1[0]*arr1[1], arr1[0]*arr2[1]*arr2[0])
 elif len(arr2)>=2 and len(arr1)==1:
     cnt = arr2[0]*arr2[1]*arr1[0]
