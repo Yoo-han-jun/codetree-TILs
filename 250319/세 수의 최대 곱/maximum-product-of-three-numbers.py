@@ -31,10 +31,12 @@ elif len(arr2)==1 and len(arr1)==2:
 elif len(arr2)<=1 and len(arr1)>=3:
     cnt = arr1[2]*arr1[0]*arr1[1]
 elif len(arr2)<2 and len(arr1)<2:
-    print(0)
+    cnt = 0
 
 if cnt<0 and len(arr3)!=0:
-    print(0)
+    if n!=3:
+        print(0)
 else:
-    print(cnt)
+    if n!=3:
+        print(cnt)
 
