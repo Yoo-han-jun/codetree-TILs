@@ -26,7 +26,7 @@ elif len(arr2)>=2 and len(arr1)==1:
     cnt = arr2[0]*arr2[1]*arr1[0]
 elif len(arr2)>=2 and len(arr1)==0:
     arr2.reverse()
-    cnt = arr2[0]*arr2[1]*arr1[2]
+    cnt = arr2[0]*arr2[1]*arr2[2]
 elif len(arr2)==1 and len(arr1)==2:
     arr1.reverse()
     cnt = arr2[0]*arr1[0]*arr1[1]
