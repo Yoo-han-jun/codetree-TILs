@@ -8,11 +8,11 @@ for i in range (n):
         break
     elif arr[i]==0:
         continue
-    else:
+    elif arr[i]==1:
         if i in wifi:
             continue
         else:
-            wifi.extend(list(range(i, i+m+2)))
+            wifi.extend(list(range(i, i+2*m+1)))
             cnt+=1
 if m==0:
     print(arr.count(1))
