@@ -4,7 +4,9 @@ wifi = []
 cnt = 0
 # Please write your code here.
 for i in range (n):
-    if arr[i]==0:
+    if m==0:
+        break
+    elif arr[i]==0:
         continue
     else:
         if i in wifi:
@@ -12,4 +14,7 @@ for i in range (n):
         else:
             wifi.extend(list(range(i, i+m+2)))
             cnt+=1
-print(cnt)
+if m==0:
+    print(arr.count(1))
+else:
+    print(cnt)
