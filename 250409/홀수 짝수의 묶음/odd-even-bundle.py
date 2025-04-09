@@ -10,26 +10,20 @@ for i in range (N):
     else:
         odd+=1
 
-print(odd, even)
 
-if odd == even:
-    print(N)
-elif even ==0:
-    if odd%3==2:
-        print(2*(odd//3)+1)
-    else:
-        print(2*(odd//3))
+if even>odd:
+    print(odd*2+1)
+elif odd == even:
+    print(odd+even)
 else:
-    cnt = 2*min(even,odd)
-    even = even-min(even, odd)
-    odd = odd-min(odd, even)
-    if odd == 1:
-        print(cnt-1)
-    elif even ==1 or odd==2:
-        print(cnt+1)
-    elif odd>=3:
-        if odd%3==2:
-            print(cnt+1+2*(odd//3))
-        else:
-            print(cnt+2*(odd//3))
+    cnt = even * 2
+    k = odd - even
 
+    if k%3==0:
+        cnt+=(k//3)*2
+    else:
+        if((k%3)%2==0):
+            cnt+= 2*(k//3)+1
+        else:
+            cnt+=2*(k//3)-1
+    print(cnt)
